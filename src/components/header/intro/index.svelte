@@ -1,6 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
 	import LangSwitcher from '../lang-switcher/index.svelte';
+	import Account from '../account/index.svelte';
 
 	const lists = ['matahari', 'purnama', 'kalasenja', 'semesta', 'samudra', 'bhumi'];
 	let init = 0;
@@ -23,6 +24,7 @@
 	</div>
 	<div class="area actions">
 		<LangSwitcher />
+		<Account />
 	</div>
 </header>
 
@@ -30,6 +32,9 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		width: 100%;
+		max-width: 1920px;
+		padding: 0 32px;
 	}
 
 	.area {
@@ -46,6 +51,7 @@
 		display: flex;
 		align-items: flex-end;
 		justify-content: flex-end;
+		gap: 24px;
 	}
 
 	@property --col1 {
