@@ -28,6 +28,11 @@
 		border-radius: 999px;
 		overflow: hidden;
 		padding: 4px;
+		transition: 0.15s ease-in-out;
+	}
+
+	.wrapper1:active {
+		transform: scale(0.925);
 	}
 
 	.wrapper2 {
@@ -57,5 +62,6 @@
 		position: relative;
 		padding: 8px 16px;
 		color: rgba(0, 0, 0, 0.5);
+		font-size: 20px;
 	}
 </style>
