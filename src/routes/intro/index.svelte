@@ -13,7 +13,7 @@
 	}
 </script>
 
-<main>
+<main aria-label={lists[index]}>
 	<IntroHead />
 	<div class="content">
 		<div class="topText">#FINDYOUR</div>
@@ -32,9 +32,33 @@
 	main {
 		position: relative;
 		min-height: 100vh;
-		background-color: #939393;
+		background-color: orange;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 		color: #fff;
 		padding: 56px 0;
+		transition: background-image 0.15s ease-in-out;
+	}
+
+	main[aria-label='matahari'] {
+		background-image: url('/images/intro/background/matahari.jpg');
+	}
+	main[aria-label='kalasenja'] {
+		background-image: url('/images/intro/background/kalasenja.jpg');
+	}
+	main[aria-label='purnama'] {
+		background-image: url('/images/intro/background/purnama.jpg');
+	}
+
+	main[aria-label='semesta'] {
+		background-image: url('/images/intro/background/semesta.jpg');
+	}
+	main[aria-label='samudra'] {
+		background-image: url('/images/intro/background/samudra.jpg');
+	}
+	main[aria-label='bhumi'] {
+		background-image: url('/images/intro/background/bhumi.jpg');
 	}
 
 	.content {
