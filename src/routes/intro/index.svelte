@@ -13,6 +13,7 @@
 		min-height: 100vh;
 		background-color: #939393;
 		color: #fff;
+		padding: 56px 0;
 	}
 
 	.topText {

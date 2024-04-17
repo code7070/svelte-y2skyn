@@ -1,5 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
+	import LangSwitcher from '../lang-switcher/index.svelte';
 
 	const lists = ['matahari', 'purnama', 'kalasenja', 'semesta', 'samudra', 'bhumi'];
 	let init = 0;
@@ -20,7 +21,9 @@
 	<div class="area logo">
 		<div class={`mask-logo`} id="y2skyn-intro-logo" aria-label={`${lists[init]}`}></div>
 	</div>
-	<div class="area actions"></div>
+	<div class="area actions">
+		<LangSwitcher />
+	</div>
 </header>
 
 <style>
@@ -45,11 +48,34 @@
 		justify-content: flex-end;
 	}
 
-	:root {
-		--col1: #fff;
-		--col2: #ffc700;
-		--pos2: 100%;
-		--col3: transparent;
+	@property --col1 {
+		syntax: '<color>';
+		inherits: false;
+		initial-value: #fff;
+	}
+
+	@property --col2 {
+		syntax: '<color>';
+		inherits: false;
+		initial-value: #ffc700;
+	}
+
+	@property --pos2 {
+		syntax: '<percentage>';
+		inherits: false;
+		initial-value: 100%;
+	}
+
+	@property --col3 {
+		syntax: '<color>';
+		inherits: false;
+		initial-value: transparent;
+	}
+
+	@property --pos3 {
+		syntax: '<percentage>';
+		inherits: false;
+		initial-value: 85%;
 	}
 
 	.mask-logo {
@@ -66,11 +92,7 @@
 		mask-repeat: no-repeat;
 		mask-position: center;
 		margin: 0 auto;
-		transition:
-			--col1 0.5s ease-in-out,
-			--col2 0.5s ease-in-out,
-			--pos2 0.5 ease-in-out,
-			--col3 0.5s ease-in-out;
+		transition: --col2 0.25s ease-in-out;
 	}
 
 	.mask-logo[aria-label='matahari'] {
@@ -84,6 +106,8 @@
 	.mask-logo[aria-label='kalasenja'] {
 		--col2: #8a83b6;
 		--pos2: 50%;
+		--col3: #fff;
+		--pos3: 85%;
 	}
 
 	.mask-logo[aria-label='semesta'] {
