@@ -8,7 +8,7 @@
 
 	if (browser) {
 		setInterval(() => {
-			index += 1 % lists.length;
+			index = (index + 1) % lists.length;
 		}, 3000);
 	}
 </script>
