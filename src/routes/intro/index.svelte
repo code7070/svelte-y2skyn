@@ -1,7 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
-
 	import IntroHead from '../../components/header/intro/index.svelte';
+	import ButtonHead from '../../components/button/diamond/index.svelte';
 
 	const lists = ['matahari', 'purnama', 'kalasenja', 'semesta', 'samudra', 'bhumi'];
 	let index = 0;
@@ -22,6 +22,9 @@
 			Mencari langkah yang tepat, menyelami dengan mendalam, dan memahami metode perawatan terbaik
 			untuk diri sendiri.
 		</div>
+		<div class="btnArea">
+			<ButtonHead />
+		</div>
 	</div>
 </main>
 
@@ -36,7 +39,8 @@
 
 	.content {
 		position: relative;
-		margin: 64px auto;
+		margin: 44px auto;
+		border: 1px solid red;
 	}
 
 	.topText {
@@ -49,7 +53,7 @@
 	.hero {
 		font-family: dahlia;
 
-		font-size: 17vw;
+		font-size: 15vw;
 		text-align: center;
 		line-height: 140%;
 
@@ -97,6 +101,14 @@
 		color: #fff;
 		width: 90%;
 		max-width: 640px;
-		margin: 40px auto 0;
+		margin: 60px auto 30px;
+	}
+
+	.btnArea {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
 	}
 </style>
