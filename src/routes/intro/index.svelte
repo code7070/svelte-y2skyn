@@ -40,7 +40,6 @@
 	.content {
 		position: relative;
 		margin: 44px auto;
-		border: 1px solid red;
 	}
 
 	.topText {
