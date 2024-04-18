@@ -5,19 +5,19 @@
 	import dome4 from '$lib/assets/intros/dome-4-low.webp';
 	import dome5 from '$lib/assets/intros/dome-5-low.webp';
 	import dome6 from '$lib/assets/intros/dome-6-low.webp';
+	import dome7 from '$lib/assets/intros/dome-7-low.webp';
 
-	const domes = ['dome-6', 'dome-2', 'dome-3', 'dome-4', 'dome-5', 'dome-6', 'dome-7'];
-	const steps = ['circle', ...domes];
+	const domes = [dome1, dome2, dome3, dome4, dome5, dome6, dome7];
 
 	let index = 0;
-	let view = steps[index];
+	let view = 'circle';
 
 	setTimeout(() => {
-		if (index < steps.length - 1) {
+		if (index < 7) {
 			setInterval(() => {
-				if (index < steps.length - 1) {
+				if (index < 7) {
 					index += 1;
-					view = steps[index];
+					view = `dome-${index}`;
 				}
 			}, 1500);
 		}
@@ -28,12 +28,9 @@
 
 <main>
 	<div class="circle" />
-	<img class="imgDome" aria-current={view === 'dome-1'} alt={'dome-1'} src={dome1} />
-	<img class="imgDome" aria-current={view === 'dome-2'} alt={'dome-2'} src={dome2} />
-	<img class="imgDome" aria-current={view === 'dome-3'} alt={'dome-3'} src={dome3} />
-	<img class="imgDome" aria-current={view === 'dome-4'} alt={'dome-4'} src={dome4} />
-	<img class="imgDome" aria-current={view === 'dome-5'} alt={'dome-5'} src={dome5} />
-	<img class="imgDome" aria-current={view === 'dome-6'} alt={'dome-6'} src={dome6} />
+	{#each domes as dome, i}
+		<img class="imgDome" aria-current={index === i + 1} alt={`dome-${i}`} src={dome} />
+	{/each}
 </main>
 
 <style>
