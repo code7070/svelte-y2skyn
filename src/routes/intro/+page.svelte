@@ -1,23 +1,17 @@
 <script>
-	const steps = [
-		'circle',
-		'dome-1',
-		'dome-2',
-		'dome-3',
-		'dome-4',
-		'dome-5',
-		'dome-6',
-		'dome-7',
-		'dome-8'
-	];
+	const domes = ['dome-1', 'dome-2', 'dome-3', 'dome-4', 'dome-5', 'dome-6', 'dome-7'];
+	const steps = ['circle', ...domes];
+
 	let index = 0;
 	let view = steps[index];
 
 	setTimeout(() => {
 		if (index < steps.length - 1) {
 			setInterval(() => {
-				index += 1;
-				view = steps[index];
+				if (index < steps.length - 1) {
+					index += 1;
+					view = steps[index];
+				}
 			}, 1500);
 		}
 	}, 1500);
@@ -27,12 +21,12 @@
 
 <main>
 	<div class="circle" />
-	{#each steps as step}
+	{#each domes as dome}
 		<img
 			class="imgDome"
-			aria-current={view === step}
-			alt={step}
-			src={`/images/intros/${step}.webp`}
+			aria-current={view === dome}
+			alt={dome}
+			src={`/images/intros/${dome}.webp`}
 		/>
 	{/each}
 </main>
