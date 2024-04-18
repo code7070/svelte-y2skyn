@@ -42,23 +42,29 @@
 	}
 
 	main[aria-label='matahari'] {
-		background-image: url('/images/intro/background/matahari.jpg');
+		background-image: url($lib/assets/home/background/matahari.jpg),
+			url('$lib/assets/home/background/matahari-low.jpg');
 	}
 	main[aria-label='kalasenja'] {
-		background-image: url('/images/intro/background/kalasenja.jpg');
+		background-image: url('$lib/assets/home/background/kalasenja.jpg'),
+			url('$lib/assets/home/background/kalasenja-low.jpg');
 	}
 	main[aria-label='purnama'] {
-		background-image: url('/images/intro/background/purnama.jpg');
+		background-image: url('$lib/assets/home/background/purnama.jpg'),
+			url('$lib/assets/home/background/purnama-low.jpg');
 	}
 
 	main[aria-label='semesta'] {
-		background-image: url('/images/intro/background/semesta.jpg');
+		background-image: url('$lib/assets/home/background/semesta.jpg'),
+			url('$lib/assets/home/background/semesta-low.jpg');
 	}
 	main[aria-label='samudra'] {
-		background-image: url('/images/intro/background/samudra.jpg');
+		background-image: url('$lib/assets/home/background/samudra.jpg'),
+			url('$lib/assets/home/background/samudra-low.jpg');
 	}
 	main[aria-label='bhumi'] {
-		background-image: url('/images/intro/background/bhumi.jpg');
+		background-image: url('$lib/home/background/bhumi.jpg'),
+			url('$lib/home/background/bhumi-low.jpg');
 	}
 
 	.content {

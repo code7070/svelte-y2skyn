@@ -12,16 +12,18 @@
 	let index = 0;
 	let view = 'circle';
 
-	setTimeout(() => {
-		if (index < 7) {
-			setInterval(() => {
-				if (index < 7) {
-					index += 1;
-					view = `dome-${index}`;
-				}
-			}, 1500);
-		}
-	}, 1500);
+	function updater() {
+		let cint;
+
+		cint = setInterval(() => {
+			if (index < 7) {
+				index += 1;
+				view = `dome-${index}`;
+			} else clearInterval(cint);
+		}, 1500);
+	}
+
+	setTimeout(updater, 1500);
 
 	$: console.log({ view });
 </script>
