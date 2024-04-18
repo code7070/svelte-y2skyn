@@ -1,7 +1,17 @@
+<script lang="ts">
+	export let text = 'Button';
+	export let onClick = () => {};
+	export let link: string;
+</script>
+
 <div class="btnArea">
 	<div class="diamond" />
 	<div class="diamond" />
-	<button type="button">Mulai Perjalananmu</button>
+	{#if link}
+		<a href={link} class="button">{text}</a>
+	{:else}
+		<button type="button" class="button" on:click={onClick}>{text}</button>
+	{/if}
 </div>
 
 <style>
@@ -16,18 +26,20 @@
 		transform: scale(0.93);
 	}
 
-	.btnArea button {
+	.btnArea .button {
 		position: relative;
 		border: 1px solid rgba(255, 255, 255, 0.5);
 		background: rgba(174, 174, 174, 0.4);
 		border-radius: 999px;
 		font-size: 24px;
-		padding: 30px 28px;
+		padding: 30px 40px;
 		height: 65px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		color: #fff;
+		font-weight: 500;
+		text-decoration: none;
 	}
 
 	.btnArea .diamond {
@@ -37,7 +49,7 @@
 		top: 50%;
 		transform: translate(0, -50%) rotate(45deg);
 		border: 1px solid #fff;
-		background: rgba(255, 255, 255, 0.8);
+		background: rgba(255, 255, 255, 1);
 		z-index: 1;
 	}
 

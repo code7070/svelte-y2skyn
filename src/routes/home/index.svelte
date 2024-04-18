@@ -1,7 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
 	import IntroHead from '../../components/header/intro/index.svelte';
-	import ButtonHead from '../../components/button/diamond/index.svelte';
+	import ButtonDiamond from '../../components/button/diamond/index.svelte';
 
 	const lists = ['matahari', 'purnama', 'kalasenja', 'semesta', 'samudra', 'bhumi'];
 	let index = 0;
@@ -23,7 +23,7 @@
 			untuk diri sendiri.
 		</div>
 		<div class="btnArea">
-			<ButtonHead />
+			<ButtonDiamond link="/intro" text="Mulai Perjalananmu" />
 		</div>
 	</div>
 </main>
