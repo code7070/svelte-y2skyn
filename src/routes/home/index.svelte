@@ -63,7 +63,8 @@
 			url($lib/assets/home/background/samudra-low.jpg);
 	}
 	main[aria-label='bhumi'] {
-		background-image: url($lib/home/background/bhumi.jpg), url($lib/home/background/bhumi-low.jpg);
+		background-image: url($lib/assets/home/background/bhumi.jpg),
+			url($lib/assets/home/background/bhumi-low.jpg);
 	}
 
 	.content {
