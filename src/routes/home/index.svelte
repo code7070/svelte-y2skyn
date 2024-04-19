@@ -42,6 +42,7 @@
 	}
 
 	main[aria-label='matahari'] {
+		background-color: orange;
 		background-image: url($lib/assets/home/background/matahari.jpg),
 			url($lib/assets/home/background/matahari-low.jpg);
 	}
@@ -86,7 +87,8 @@
 		text-align: center;
 		line-height: 140%;
 
-		background-image: url('/images/intro/hero-font/matahari.jpg');
+		background-image: url('$lib/assets/home/hero-font/matahari.jpg'),
+			url('$lib/assets/home/hero-font/matahari-low.jpg');
 		background-position: center;
 		background-size: contain;
 		background-clip: text;
@@ -101,27 +103,33 @@
 	}
 
 	.hero.matahari {
-		background-image: url('/images/intro/hero-font/matahari.jpg');
+		background-image: url('$lib/assets/home/hero-font/matahari.jpg'),
+			url('$lib/assets/home/hero-font/matahari-low.jpg');
 	}
 
 	.hero.purnama {
-		background-image: url('/images/intro/hero-font/purnama.jpg');
+		background-image: url('$lib/assets/home/hero-font/purnama.jpg'),
+			url('$lib/assets/home/hero-font/purnama-low.jpg');
 	}
 
 	.hero.kalasenja {
-		background-image: url('/images/intro/hero-font/kalasenja.jpg');
+		background-image: url('$lib/assets/home/hero-font/kalasenja.jpg'),
+			url('$lib/assets/home/hero-font/kalasenja-low.jpg');
 	}
 
 	.hero.samudra {
-		background-image: url('/images/intro/hero-font/samudra.jpg');
+		background-image: url('$lib/assets/home/hero-font/samudra.jpg'),
+			url('$lib/assets/home/hero-font/samudra-low.jpg');
 	}
 
 	.hero.semesta {
-		background-image: url('/images/intro/hero-font/semesta.jpg');
+		background-image: url('$lib/assets/home/hero-font/semesta.jpg'),
+			url('$lib/assets/home/hero-font/semesta-low.jpg');
 	}
 
 	.hero.bhumi {
-		background-image: url('/images/intro/hero-font/bhumi.jpg');
+		background-image: url('$lib/assets/home/hero-font/bhumi.jpg'),
+			url('$lib/assets/home/hero-font/bhumi-low.jpg');
 	}
 
 	.body {
