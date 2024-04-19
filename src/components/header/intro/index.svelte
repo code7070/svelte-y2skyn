@@ -93,7 +93,7 @@
 			var(--col2) var(--pos2),
 			var(--col3) 100%
 		);
-		mask-image: url('/images/intro/logo/y2skyn-logo-black.png');
+		mask-image: url('$lib/assets/home/logo/y2skyn-logo-black.png');
 		mask-size: cover;
 		mask-repeat: no-repeat;
 		mask-position: center;
