@@ -23,7 +23,7 @@
 			untuk diri sendiri.
 		</div>
 		<div class="btnArea">
-			<ButtonDiamond link="/intro" text="Mulai Perjalananmu" />
+			<ButtonDiamond link="/intro">Mulai Perjalananmu</ButtonDiamond>
 		</div>
 	</div>
 </main>

@@ -43,7 +43,7 @@
 		<img class="imgDome" aria-current={index === i + 1} alt={`dome-${i}`} src={dome} />
 	{/each}
 	<div class="buttonArea">
-		<ButtonDiamond text="Skip Intro" link="/quiz"></ButtonDiamond>
+		<ButtonDiamond link="/quiz">Skip Intro</ButtonDiamond>
 	</div>
 </main>
 
