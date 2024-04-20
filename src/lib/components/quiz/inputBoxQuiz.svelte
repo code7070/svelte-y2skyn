@@ -23,14 +23,16 @@
 		transform: translate(-50%, 0) rotate(45deg);
 		background: rgb(255, 255, 255, 1);
 		border: 1px solid #fff;
+		width: 14px;
+		height: 14px;
 	}
 
 	.input-wrapper::before {
-		top: 0;
+		top: -8px;
 	}
 
 	.input-wrapper::after {
-		bottom: 0;
+		bottom: -8px;
 	}
 
 	.input-wrapper input {

@@ -29,15 +29,19 @@
 
 <div out:scale in:fade>
 	{#if step === 1}
-		<QuizWrapper title="Tentang Diri" question="" next={nameValidated ? next1 : false}>
-			<div class="question" style="margin-bottom: 60px; margin-top:-20px">
-				Halo! Kami Y2SKYN,<br />Kalau kamu?
-			</div>
+		<QuizWrapper
+			title="Tentang Diri"
+			titleState="Pertanyaan 1/5"
+			questionSize="mini"
+			question="Halo! Kami Y2SKYN, Kalau Kamu?"
+			next={nameValidated ? next1 : false}
+		>
 			<InputBoxQuiz bind:value={form.name} placeholder="Nama" />
 		</QuizWrapper>
 	{:else if step === 2}
 		<QuizWrapper
 			title="Tentang Diri"
+			titleState="Pertanyaan 2/5"
 			question="Kapan Tanggal Lahirmu"
 			next={dateValidated ? next2 : false}
 			prev={prev2}
