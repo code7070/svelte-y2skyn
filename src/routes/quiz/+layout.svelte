@@ -53,9 +53,9 @@
 		background-position: 0% 50%;
 		background-repeat: no-repeat;
 		background-size: 150%;
-		padding: 10px;
 		color: #fff;
 		animation: animates 6s ease infinite alternate;
+		padding: 60px 40px;
 	}
 
 	.glass {
