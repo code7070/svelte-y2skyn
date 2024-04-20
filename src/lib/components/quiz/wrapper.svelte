@@ -3,14 +3,11 @@
 
 	export let title: string;
 	export let question: string;
-	export let prev = false;
+	export let prev: false | (() => void) = false;
 	export let next: false | (() => void) = false;
 
-	let clickPrev = () => {};
-	if (prev && typeof prev === 'function') clickPrev = prev;
-
-	let clickNext = () => {};
-	if (next && typeof next === 'function') clickNext = next;
+	$: clickPrev = typeof prev === 'function' ? prev : undefined;
+	$: clickNext = typeof next === 'function' ? next : undefined;
 </script>
 
 <div class="quiz-wrapper">

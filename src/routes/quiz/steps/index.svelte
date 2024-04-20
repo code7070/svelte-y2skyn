@@ -3,34 +3,54 @@
 	import QuizWrapper from '$lib/components/quiz/wrapper.svelte';
 	import InputBoxQuiz from '$lib/components/quiz/inputBoxQuiz.svelte';
 
-	let step = 0;
+	let step = 1;
 
 	let form = {
-		name: ''
+		name: '',
+		dob: ''
 	};
 
 	function next1() {
 		console.log('Next: ', form);
+		step = 2;
+		console.log({ step });
+	}
+
+	function next2() {
+		step = 3;
+	}
+	function prev2() {
+		step = 1;
 	}
 
 	$: nameValidated = form.name.length > 2 || false;
-
-	$: console.log(form);
+	$: dateValidated = form.dob.length === 10;
 </script>
 
-{#if step === 0}
-	<div in:scale out:fade>
+<div out:scale in:fade>
+	{#if step === 1}
 		<QuizWrapper title="Tentang Diri" question="" next={nameValidated ? next1 : false}>
 			<div class="question" style="margin-bottom: 60px; margin-top:-20px">
 				Halo! Kami Y2SKYN,<br />Kalau kamu?
 			</div>
 			<InputBoxQuiz bind:value={form.name} placeholder="Nama" />
 		</QuizWrapper>
-	</div>
-{/if}
+	{:else if step === 2}
+		<QuizWrapper
+			title="Tentang Diri"
+			question="Kapan Tanggal Lahirmu"
+			next={dateValidated ? next2 : false}
+			prev={prev2}
+		>
+			<InputBoxQuiz bind:value={form.dob} placeholder="DD/MM/YYY" />
+		</QuizWrapper>
+	{/if}
+</div>
 
 <style>
 	.question {
 		font-size: 40px;
+		max-width: 578px;
+		margin: 0 auto;
 	}
 </style>
