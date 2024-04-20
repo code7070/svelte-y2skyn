@@ -1,23 +1,33 @@
-<script>
+<script lang="ts">
 	import Logo from './logo.svelte';
 	import Header from '$lib/components/header/quiz/index.svelte';
+	import QuizSteps from './steps/index.svelte';
+	import { scale } from 'svelte/transition';
+	import { onDestroy, onMount } from 'svelte';
+
 	let view = 'logo';
-	let forms = {
-		name: '',
-		dob: '',
-		zodiac: 0
-	};
-	setTimeout(() => {
-		view = 'quiz';
-	}, 3000);
+	let timer: number | undefined;
+
+	onMount(() => {
+		timer = setTimeout(() => {
+			view = 'quiz';
+		}, 2000);
+	});
+
+	onDestroy(() => {
+		clearTimeout(timer);
+	});
 </script>
 
 <div class="wrapper">
-	{#if view === 'logo'}
-		<Logo />
-	{/if}
-	{#if view !== 'logo'}
+	<Logo view={`${view}`} />
+	{#if view === 'quiz'}
 		<Header />
+	{/if}
+	{#if view === 'quiz'}
+		<div in:scale>
+			<QuizSteps />
+		</div>
 	{/if}
 </div>
 

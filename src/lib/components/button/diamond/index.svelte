@@ -1,16 +1,16 @@
 <script lang="ts">
-	export let text = 'Button';
 	export let onClick = () => {};
-	export let link: string;
+	export let link = '';
+	export let disabled: boolean = false;
 </script>
 
-<div class="btnArea">
+<div class="btnArea" aria-disabled={disabled ? 'true' : 'false'}>
 	<div class="diamond" />
 	<div class="diamond" />
 	{#if link}
-		<a href={link} class="button">{text}</a>
+		<a href={link} class="button"><slot /></a>
 	{:else}
-		<button type="button" class="button" on:click={onClick}>{text}</button>
+		<button type="button" class="button" on:click={onClick}><slot /></button>
 	{/if}
 </div>
 
@@ -58,5 +58,11 @@
 	}
 	.btnArea .diamond:nth-child(2) {
 		right: -7px;
+	}
+
+	.btnArea[aria-disabled='true'] {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
 	}
 </style>

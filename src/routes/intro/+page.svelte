@@ -1,5 +1,4 @@
 <script>
-	import { goto } from '$app/navigation';
 	import { onMount, onDestroy } from 'svelte';
 	import dome1 from '$lib/assets/intros/dome-1-low.webp';
 	import dome2 from '$lib/assets/intros/dome-2-low.webp';
@@ -23,7 +22,6 @@
 				view = `dome-${index}`;
 			} else {
 				index = 0;
-				if (goto) goto('/quiz');
 			}
 		}, 1500);
 	}
