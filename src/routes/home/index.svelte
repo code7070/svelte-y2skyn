@@ -41,12 +41,6 @@
 		transition: background-image 0.15s ease-in-out;
 	}
 
-	@media (min-width: 768px) {
-		main {
-			padding: 56px 0;
-		}
-	}
-
 	main[aria-label='matahari'] {
 		background-color: orange;
 		background-image: url($lib/assets/home/background/matahari.jpg),
@@ -75,21 +69,27 @@
 	}
 
 	.content {
-		position: relative;
-		margin: 44px auto;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(0, -50%);
+		width: 100%;
 	}
 
 	.topText {
+		--size: 20px;
 		text-align: center;
-		font-size: 3vw;
-		letter-spacing: 24px;
+		/* font-size: 3vw; */
+		font-size: var(--size);
+		letter-spacing: calc(var(--size) * 0.6);
 		font-weight: 500;
 	}
 
 	.hero {
 		font-family: dahlia;
 
-		font-size: 15vw;
+		/* font-size: 15vw; */
+		font-size: 78px;
 		text-align: center;
 		line-height: 140%;
 
@@ -104,7 +104,8 @@
 
 		transition: background-image 1s ease-in-out;
 
-		margin-top: -5vw;
+		/* margin-top: -1vw; */
+		margin-top: -20px;
 		position: relative;
 	}
 
@@ -139,12 +140,14 @@
 	}
 
 	.body {
+		--sizeBody: 14px;
 		text-align: center;
-		font-size: 24px;
+		font-size: var(--sizeBody);
 		color: #fff;
 		width: 90%;
-		max-width: 640px;
-		margin: 60px auto 30px;
+		max-width: 320px;
+		margin: 20px auto;
+		line-height: calc(var(--sizeBody) * 1.4);
 	}
 
 	.btnArea {
@@ -153,5 +156,34 @@
 		justify-content: center;
 		align-items: center;
 		padding: 10px;
+	}
+
+	@media (min-width: 768px) {
+		main {
+			padding: 56px 0;
+		}
+
+		.content {
+			position: relative;
+			margin: 44px auto;
+			top: initial;
+			transform: translate(0, 0);
+			max-width: 100%;
+		}
+
+		.topText {
+			--size: 40px;
+		}
+
+		.hero {
+			font-size: 188px;
+			margin-top: -50px;
+		}
+
+		.body {
+			--sizeBody: 24px;
+			max-width: 640px;
+			margin: 30px auto;
+		}
 	}
 </style>

@@ -32,15 +32,16 @@
 		border: 1px solid rgba(255, 255, 255, 0.5);
 		background: rgba(174, 174, 174, 0.4);
 		border-radius: 999px;
-		font-size: 24px;
-		padding: 30px 40px;
-		height: 65px;
+		font-size: 16px;
+		padding: 20px 30px;
+		height: 48px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		color: #fff;
 		font-weight: 500;
 		text-decoration: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	.btnArea .diamond {
@@ -65,5 +66,13 @@
 		opacity: 0.5;
 		cursor: not-allowed;
 		pointer-events: none;
+	}
+
+	@media (min-width: 768px) {
+		.btnArea .button {
+			font-size: 24px;
+			height: 65px;
+			padding: 30px 40px;
+		}
 	}
 </style>
