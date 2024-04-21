@@ -60,7 +60,7 @@
 	.head {
 		display: flex;
 		flex-direction: column;
-		gap: 24px;
+		gap: 16px;
 	}
 
 	.title {
@@ -89,7 +89,7 @@
 
 	@media (min-width: 685px) {
 		.quiz-wrapper {
-			margin-top: 0px;
+			margin-top: 100px;
 		}
 
 		.title {
@@ -109,7 +109,7 @@
 		}
 
 		.content {
-			gap: 32px;
+			gap: 60px;
 		}
 	}
 </style>

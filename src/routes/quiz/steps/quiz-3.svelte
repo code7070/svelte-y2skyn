@@ -51,22 +51,38 @@
 	.option-wrapper {
 		position: relative;
 		display: flex;
-		/* flex-wrap: wrap; */
+		flex-wrap: wrap;
 		gap: 28px;
 		align-items: flex-start;
 		justify-content: center;
 	}
 
 	.options {
-		width: 243px;
+		width: 40%;
 		display: flex;
 		flex-direction: column;
-		gap: 32px;
+		gap: 16px;
 	}
 
 	.option-info {
-		font-size: 24px;
+		font-size: 16px;
 		font-weight: 500;
 		text-align: center;
+	}
+
+	@media (min-width: 685px) {
+		.option-wrapper {
+			flex-wrap: nowrap;
+		}
+
+		.options {
+			width: 100%;
+			flex: 1;
+			gap: 32px;
+		}
+
+		.option-info {
+			font-size: 24px;
+		}
 	}
 </style>

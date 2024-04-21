@@ -14,9 +14,19 @@
 
 <style>
 	header {
+		position: fixed;
+		left: 0;
+		top: 0;
+		padding: 20px;
+		width: 100%;
 		max-width: 100%;
 		display: flex;
 		justify-content: space-between;
-		position: relative;
+	}
+
+	@media (min-width: 685px) {
+		header {
+			padding: 60px 40px;
+		}
 	}
 </style>

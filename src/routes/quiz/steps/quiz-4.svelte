@@ -29,16 +29,12 @@
 	{prev}
 >
 	<div class="option-wrapper">
-		{#each optRow1 as option, index (option)}
-			<QuizOption onClick={() => click(option)} selected={destiny === option}>
-				{option}
-			</QuizOption>
-		{/each}
-		<br />
-		{#each optRow2 as option, index (option)}
-			<QuizOption onClick={() => click(option)} selected={destiny === option}>
-				{option}
-			</QuizOption>
+		{#each options as option, index (option)}
+			<div class="option">
+				<QuizOption onClick={() => click(option)} selected={destiny === option}>
+					{option}
+				</QuizOption>
+			</div>
 		{/each}
 	</div>
 </QuizWrapper>
@@ -51,5 +47,18 @@
 		gap: 28px;
 		align-items: flex-start;
 		justify-content: center;
+		max-width: 768px;
+		margin: 0 auto;
+	}
+
+	.option {
+		/* flex: 1; */
+		width: 45%;
+	}
+
+	@media (min-width: 685px) {
+		.option {
+			width: 30%;
+		}
 	}
 </style>
