@@ -68,7 +68,7 @@
 		pointer-events: none;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 685px) {
 		.btnArea .button {
 			font-size: 24px;
 			height: 65px;

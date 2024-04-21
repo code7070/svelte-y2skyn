@@ -67,7 +67,7 @@
 		min-width: 30px;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 685px) {
 		.lang {
 			font-size: 20px;
 			padding: 8px 16px;

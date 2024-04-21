@@ -25,7 +25,7 @@
 		height: auto;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 685px) {
 		button {
 			width: 44px;
 			aspect-ratio: 1/1;

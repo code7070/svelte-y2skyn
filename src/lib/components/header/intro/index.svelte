@@ -133,7 +133,7 @@
 		--pos2: 50%;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 685px) {
 		header {
 			padding: 0 32px;
 		}

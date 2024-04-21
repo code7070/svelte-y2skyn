@@ -158,7 +158,7 @@
 		padding: 10px;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 685px) {
 		main {
 			padding: 56px 0;
 		}
