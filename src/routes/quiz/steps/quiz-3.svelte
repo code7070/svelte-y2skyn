@@ -13,6 +13,17 @@
 	function next() {
 		step = 4;
 	}
+
+	const options = [
+		{ value: 'Fire', zodiacs: 'Aries, Leo, Sagitarius' },
+		{ value: 'Earth', zodiacs: 'Taurus, Virgo, Capricorn' },
+		{ value: 'Air', zodiacs: 'Gemini, Libra, Aquarius' },
+		{ value: 'Water', zodiacs: 'Cancer, Scorpio, Pisces' }
+	];
+
+	function click(value: string) {
+		zodiac = value;
+	}
 </script>
 
 <QuizWrapper
@@ -23,22 +34,14 @@
 	{next}
 >
 	<div class="option-wrapper">
-		<div class="options">
-			<QuizOption>Fire</QuizOption>
-			<div class="option-info">Aries, Leo, Sagitarius</div>
-		</div>
-		<div class="options">
-			<QuizOption>Earth</QuizOption>
-			<div class="option-info">Taurus, Virgo, Capricorn</div>
-		</div>
-		<div class="options">
-			<QuizOption>Air</QuizOption>
-			<div class="option-info">Gemini, Libra, Aquarius</div>
-		</div>
-		<div class="options">
-			<QuizOption>Water</QuizOption>
-			<div class="option-info">Cancer, Scorpio Pisces</div>
-		</div>
+		{#each options as option, i}
+			<div class="options">
+				<QuizOption selected={zodiac === option.value} onClick={() => click(option.value)}
+					>{option.value}</QuizOption
+				>
+				<div class="option-info">{option.zodiacs}</div>
+			</div>
+		{/each}
 	</div>
 </QuizWrapper>
 

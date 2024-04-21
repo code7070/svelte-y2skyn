@@ -1,9 +1,9 @@
 <script lang="ts">
 	export let onClick = () => {};
-	export let selected = false;
+	export let selected: boolean = false;
 </script>
 
-<button on:click={onClick} class="quiz-option">
+<button on:click={onClick} class="quiz-option" aria-disabled={selected}>
 	<slot></slot>
 </button>
 
@@ -22,5 +22,16 @@
 		font-size: 32px;
 		font-weight: 500;
 		color: #fff;
+		transition: 0.15s ease-in-out;
+		box-shadow: 0 0 0px rgba(255, 255, 255, 0);
+	}
+
+	.quiz-option[aria-disabled='true'] {
+		background: rgba(245, 245, 245, 0.6);
+		box-shadow: 0 0 60px rgba(255, 255, 255, 0.6);
+	}
+
+	.quiz-option:active {
+		transform: scale(0.9);
 	}
 </style>
