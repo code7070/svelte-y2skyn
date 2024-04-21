@@ -33,7 +33,7 @@
 					<div>Sebelumnya</div>
 				</ButtonDiamond>
 			{/if}
-			<ButtonDiamond onClick={clickNext} disabled={!next}>
+			<ButtonDiamond onClick={clickNext} disabled={!next} type="submit">
 				<div>Selanjutnya</div>
 			</ButtonDiamond>
 		</div>

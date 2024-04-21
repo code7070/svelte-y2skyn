@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { scale, fade } from 'svelte/transition';
-	import QuizWrapper from '$lib/components/quiz/wrapper.svelte';
-	import InputBoxQuiz from '$lib/components/quiz/inputBoxQuiz.svelte';
+	import Quiz_1 from './quiz-1.svelte';
+	import Quiz_2 from './quiz-2.svelte';
 
 	let step = 1;
 
@@ -10,51 +10,48 @@
 		dob: ''
 	};
 
-	function next1() {
-		console.log('Next: ', form);
-		step = 2;
-		console.log({ step });
+	interface OptionItem {
+		value: string;
+		child: any;
+	}
+	interface QuizItem {
+		title: string;
+		titleState: string;
+		questionSize?: 'mini' | 'default';
+		question: string;
+		quest: 'input' | 'option';
+		inputBind?: any;
+		inputPlaceholder?: string;
+		options?: Array<OptionItem>;
 	}
 
-	function next2() {
-		step = 3;
-	}
-	function prev2() {
-		step = 1;
-	}
+	const quizs: Array<QuizItem> = [
+		{
+			title: 'Tentang Diri',
+			titleState: 'Pertanyaan 1/5',
+			questionSize: 'mini',
+			question: 'Halo! Kami Y2SKYN, Kalau Kamu?',
+			quest: 'input',
+			inputBind: form.name,
+			inputPlaceholder: 'Nama'
+		},
+		{
+			title: 'Tentang Diri',
+			titleState: 'Pertanyaan 2/5',
+			question: 'Kapan Tanggal Lahirmu?',
+			quest: 'input',
+			inputBind: form.dob,
+			inputPlaceholder: 'DD/MM/YYYY'
+		}
+	];
 
-	$: nameValidated = form.name.length > 2 || false;
-	$: dateValidated = form.dob.length === 10;
+	$: console.log(form.name);
 </script>
 
 <div out:scale in:fade>
 	{#if step === 1}
-		<QuizWrapper
-			title="Tentang Diri"
-			titleState="Pertanyaan 1/5"
-			questionSize="mini"
-			question="Halo! Kami Y2SKYN, Kalau Kamu?"
-			next={nameValidated ? next1 : false}
-		>
-			<InputBoxQuiz bind:value={form.name} placeholder="Nama" />
-		</QuizWrapper>
+		<Quiz_1 bind:name={form.name} bind:step />
 	{:else if step === 2}
-		<QuizWrapper
-			title="Tentang Diri"
-			titleState="Pertanyaan 2/5"
-			question="Kapan Tanggal Lahirmu"
-			next={dateValidated ? next2 : false}
-			prev={prev2}
-		>
-			<InputBoxQuiz bind:value={form.dob} placeholder="DD/MM/YYY" />
-		</QuizWrapper>
+		<Quiz_2 bind:dob={form.dob} bind:step />
 	{/if}
 </div>
-
-<style>
-	.question {
-		font-size: 40px;
-		max-width: 578px;
-		margin: 0 auto;
-	}
-</style>

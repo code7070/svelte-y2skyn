@@ -2,6 +2,7 @@
 	export let onClick = () => {};
 	export let link = '';
 	export let disabled: boolean = false;
+	export let type: 'button' | 'submit' = 'button';
 </script>
 
 <div class="btnArea" aria-disabled={disabled ? 'true' : 'false'}>
@@ -10,7 +11,7 @@
 	{#if link}
 		<a href={link} class="button"><slot /></a>
 	{:else}
-		<button type="button" class="button" on:click={onClick}><slot /></button>
+		<button {type} class="button" on:click={onClick}><slot /></button>
 	{/if}
 </div>
 
