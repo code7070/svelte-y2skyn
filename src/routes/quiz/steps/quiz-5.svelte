@@ -99,6 +99,7 @@
 		left: 50%;
 		transform: translate(-50%, 0);
 		margin-top: -10px;
+		text-align: center;
 	}
 
 	@media (min-width: 685px) {

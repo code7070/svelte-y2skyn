@@ -89,7 +89,7 @@
 
 	@media (min-width: 685px) {
 		.quiz-wrapper {
-			margin-top: 100px;
+			margin-top: 50px;
 		}
 
 		.title {
