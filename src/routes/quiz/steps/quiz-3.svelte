@@ -1,6 +1,5 @@
 <script lang="ts">
 	import QuizWrapper from '$lib/components/quiz/wrapper.svelte';
-	import InputBoxQuiz from '$lib/components/quiz/inputBoxQuiz.svelte';
 	import QuizOption from '$lib/components/quiz/option.svelte';
 
 	export let step: number;
@@ -22,7 +21,8 @@
 	];
 
 	function click(value: string) {
-		zodiac = value;
+		if (zodiac === value) zodiac = '';
+		else zodiac = value;
 	}
 
 	$: nextFn = zodiac ? next : undefined;

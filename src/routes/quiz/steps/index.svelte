@@ -3,13 +3,15 @@
 	import Quiz_1 from './quiz-1.svelte';
 	import Quiz_2 from './quiz-2.svelte';
 	import Quiz_3 from './quiz-3.svelte';
+	import Quiz_4 from './quiz-4.svelte';
 
 	let step = 1;
 
 	let form = {
 		name: '',
 		dob: '',
-		zodiac: ''
+		zodiac: '',
+		destiny: ''
 	};
 
 	// interface OptionItem {
@@ -60,6 +62,10 @@
 	{:else if step === 3}
 		<div in:fade={{ delay: 250 }} out:fade={{ duration: 150 }}>
 			<Quiz_3 bind:zodiac={form.zodiac} bind:step />
+		</div>
+	{:else if step === 4}
+		<div in:fade={{ delay: 250 }} out:fade={{ duration: 150 }}>
+			<Quiz_4 bind:destiny={form.destiny} bind:step />
 		</div>
 	{/if}
 </div>
