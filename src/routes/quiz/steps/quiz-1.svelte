@@ -6,6 +6,7 @@
 	export let step: number;
 
 	$: nameValidated = name.length > 2;
+	$: console.log({ name });
 
 	function next1(e?: any) {
 		if (e) e.preventDefault();

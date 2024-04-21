@@ -46,8 +46,8 @@
 
 	.btnArea .diamond {
 		position: absolute;
-		width: 20px;
-		height: 20px;
+		width: 10px;
+		aspect-ratio: 1/1;
 		top: 50%;
 		transform: translate(0, -50%) rotate(45deg);
 		border: 1px solid #fff;
@@ -56,10 +56,10 @@
 	}
 
 	.btnArea .diamond:nth-child(1) {
-		left: -7px;
+		left: -4px;
 	}
 	.btnArea .diamond:nth-child(2) {
-		right: -7px;
+		right: -4px;
 	}
 
 	.btnArea[aria-disabled='true'] {
@@ -73,6 +73,17 @@
 			font-size: 24px;
 			height: 65px;
 			padding: 30px 40px;
+		}
+
+		.btnArea .diamond {
+			width: 20px;
+		}
+
+		.btnArea .diamond:nth-child(1) {
+			left: -7px;
+		}
+		.btnArea .diamond:nth-child(2) {
+			right: -7px;
 		}
 	}
 </style>

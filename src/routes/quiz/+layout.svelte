@@ -37,11 +37,9 @@
 <style>
 	@keyframes animates {
 		from {
-			background-size: 150%;
 			background-position: 0% 50%;
 		}
 		to {
-			background-size: 200%;
 			background-position: 100% 100%;
 		}
 	}
@@ -52,10 +50,10 @@
 			url('$lib/assets/quiz/quiz-bg-mid.jpg');
 		background-position: 0% 50%;
 		background-repeat: no-repeat;
-		background-size: 150%;
+		background-size: cover;
 		color: #fff;
-		animation: animates 6s ease infinite alternate;
-		padding: 60px 40px;
+		animation: animates 3s ease infinite alternate;
+		padding: 20px;
 	}
 
 	.glass {
@@ -72,5 +70,33 @@
 		filter: blur();
 		flex: 1;
 		height: 100%;
+	}
+
+	.glass .blur:nth-child(1),
+	.glass .blur:nth-child(2),
+	.glass .blur:nth-child(3),
+	.glass .blur:nth-child(4),
+	.glass .blur:nth-child(21),
+	.glass .blur:nth-child(22),
+	.glass .blur:nth-child(23),
+	.glass .blur:nth-child(24) {
+		display: none;
+	}
+
+	@media (min-width: 685px) {
+		main {
+			padding: 60px 40px;
+		}
+
+		.glass .blur:nth-child(1),
+		.glass .blur:nth-child(2),
+		.glass .blur:nth-child(3),
+		.glass .blur:nth-child(4),
+		.glass .blur:nth-child(21),
+		.glass .blur:nth-child(22),
+		.glass .blur:nth-child(23),
+		.glass .blur:nth-child(24) {
+			display: block;
+		}
 	}
 </style>

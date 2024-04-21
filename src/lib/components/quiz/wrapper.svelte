@@ -47,35 +47,37 @@
 		text-align: center;
 		max-width: 1024px;
 		margin: 0 auto;
+		margin-top: 100px;
 	}
 
 	.content {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		gap: 60px;
+		gap: 32px;
 	}
 
 	.head {
 		display: flex;
 		flex-direction: column;
-		gap: 32px;
+		gap: 24px;
 	}
 
 	.title {
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: 400;
 		color: rgba(255, 255, 255, 0.8);
 	}
 
 	.question {
-		font-size: 40px;
+		font-size: 24px;
 		margin: 0 auto;
 		max-width: 578px;
+		line-height: 130%;
 	}
 
 	.question.mini {
-		max-width: 460px;
+		max-width: 280px;
 	}
 
 	.actions {
@@ -83,5 +85,31 @@
 		gap: 40px;
 		justify-content: center;
 		align-items: center;
+	}
+
+	@media (min-width: 685px) {
+		.quiz-wrapper {
+			margin-top: 0px;
+		}
+
+		.title {
+			font-size: 20px;
+		}
+
+		.head {
+			gap: 32px;
+		}
+
+		.question {
+			font-size: 40px;
+		}
+
+		.question.mini {
+			max-width: 460px;
+		}
+
+		.content {
+			gap: 32px;
+		}
 	}
 </style>
