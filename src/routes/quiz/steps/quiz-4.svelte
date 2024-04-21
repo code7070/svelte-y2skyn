@@ -29,13 +29,13 @@
 	{prev}
 >
 	<div class="option-wrapper">
-		{#each optRow1 as option}
+		{#each optRow1 as option, index (option)}
 			<QuizOption onClick={() => click(option)} selected={destiny === option}>
 				{option}
 			</QuizOption>
 		{/each}
 		<br />
-		{#each optRow2 as option}
+		{#each optRow2 as option, index (option)}
 			<QuizOption onClick={() => click(option)} selected={destiny === option}>
 				{option}
 			</QuizOption>
