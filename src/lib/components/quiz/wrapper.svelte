@@ -45,6 +45,8 @@
 		position: relative;
 		color: #fff;
 		text-align: center;
+		max-width: 1024px;
+		margin: 0 auto;
 	}
 
 	.content {
