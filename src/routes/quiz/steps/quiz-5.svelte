@@ -48,24 +48,16 @@
 	{prev}
 >
 	<div class="option-wrapper">
-		{#each optRow1 as option, index (option)}
-			<QuizOption onClick={() => setValue(option.name)} selected={crystal === option.name}>
-				<div>
-					<img alt={option.name} title={option.name} src={option.image} />
-					<br />
-					{option.name}
-				</div>
-			</QuizOption>
-		{/each}
-		<br />
-		{#each optRow2 as option, index (option)}
-			<QuizOption onClick={() => setValue(option.name)} selected={crystal === option.name}>
-				<div>
-					<img alt={option.name} title={option.name} src={option.image} />
-					<br />
-					{option.name}
-				</div>
-			</QuizOption>
+		{#each options as option, index (option)}
+			<div class="option">
+				<QuizOption onClick={() => setValue(option.name)} selected={crystal === option.name}>
+					<div class="inner">
+						<img alt={option.name} title={option.name} src={option.image} />
+						<br />
+						<div class="name">{option.name}</div>
+					</div>
+				</QuizOption>
+			</div>
 		{/each}
 	</div>
 </QuizWrapper>
@@ -78,5 +70,44 @@
 		gap: 28px;
 		align-items: flex-start;
 		justify-content: center;
+	}
+
+	.option {
+		width: 40%;
+	}
+
+	.inner {
+		position: relative;
+		/* border: 1px solid red; */
+		height: 70%;
+		width: 100%;
+	}
+
+	.inner img {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+		height: 77%;
+		/* object-fit: cover; */
+		/* object-position: top center; */
+	}
+
+	.inner .name {
+		position: absolute;
+		top: 70%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		margin-top: -10px;
+	}
+
+	@media (min-width: 685px) {
+		.option {
+			width: 30%;
+		}
+
+		.inner .name {
+			top: 55%;
+		}
 	}
 </style>
