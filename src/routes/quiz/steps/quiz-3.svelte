@@ -24,14 +24,16 @@
 	function click(value: string) {
 		zodiac = value;
 	}
+
+	$: nextFn = zodiac ? next : undefined;
 </script>
 
 <QuizWrapper
 	title="Tentang Diri"
 	titleState="Pertanyaan 3/5"
 	question="Apa Zodiac Sign Kamu?"
+	next={nextFn}
 	{prev}
-	{next}
 >
 	<div class="option-wrapper">
 		{#each options as option, i}
