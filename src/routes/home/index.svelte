@@ -37,8 +37,14 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		color: #fff;
-		padding: 56px 0;
+		padding: 24px 0;
 		transition: background-image 0.15s ease-in-out;
+	}
+
+	@media (min-width: 768px) {
+		main {
+			padding: 56px 0;
+		}
 	}
 
 	main[aria-label='matahari'] {

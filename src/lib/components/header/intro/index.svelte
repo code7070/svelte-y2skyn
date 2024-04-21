@@ -34,22 +34,26 @@
 		justify-content: space-between;
 		width: 100%;
 		max-width: 1920px;
-		padding: 0 32px;
+		padding: 0 10px;
 	}
 
 	.area {
-		width: 33%;
+		flex: 1;
+	}
+
+	.area:nth-child(1) {
+		display: none;
 	}
 
 	.area.logo {
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 	}
 
 	.area.actions {
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		justify-content: flex-end;
 		gap: 24px;
 	}
@@ -85,8 +89,8 @@
 	}
 
 	.mask-logo {
-		width: 164px;
-		height: 45px;
+		width: 100px;
+		height: 24px;
 		background-image: linear-gradient(
 			90deg,
 			var(--col1) 0%,
@@ -97,8 +101,8 @@
 		mask-size: cover;
 		mask-repeat: no-repeat;
 		mask-position: center;
-		margin: 0 auto;
 		transition: --col2 0.25s ease-in-out;
+		border: 1px solid red;
 	}
 
 	.mask-logo[aria-label='matahari'] {
@@ -127,5 +131,25 @@
 	.mask-logo[aria-label='bhumi'] {
 		--col2: #96a7c3;
 		--pos2: 50%;
+	}
+
+	@media (min-width: 768px) {
+		header {
+			padding: 0 32px;
+		}
+
+		.area.logo {
+			justify-content: center;
+		}
+
+		.area:nth-child(1) {
+			display: block;
+		}
+
+		.mask-logo {
+			width: 164px;
+			height: 45px;
+			margin: 0 auto;
+		}
 	}
 </style>

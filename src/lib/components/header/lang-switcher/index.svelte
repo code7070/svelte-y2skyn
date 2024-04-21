@@ -29,6 +29,7 @@
 		overflow: hidden;
 		padding: 4px;
 		transition: 0.15s ease-in-out;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	.wrapper1:active {
@@ -60,8 +61,16 @@
 
 	.lang {
 		position: relative;
-		padding: 8px 16px;
+		padding: 4px;
 		color: rgba(0, 0, 0, 0.5);
-		font-size: 20px;
+		font-size: 16px;
+		min-width: 30px;
+	}
+
+	@media (min-width: 768px) {
+		.lang {
+			font-size: 20px;
+			padding: 8px 16px;
+		}
 	}
 </style>

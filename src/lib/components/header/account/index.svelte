@@ -9,11 +9,11 @@
 
 <style>
 	button {
-		width: 44px;
-		height: 44px;
+		width: 28px;
 		color: #fff;
 		background: transparent;
 		transition: 0.15s ease-in-out;
+		aspect-ratio: 1/1;
 	}
 
 	button:active {
@@ -23,5 +23,12 @@
 	button svg {
 		width: 100%;
 		height: auto;
+	}
+
+	@media (min-width: 768px) {
+		button {
+			width: 44px;
+			aspect-ratio: 1/1;
+		}
 	}
 </style>
