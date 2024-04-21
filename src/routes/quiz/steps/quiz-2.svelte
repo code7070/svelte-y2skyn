@@ -7,7 +7,7 @@
 
 	$: dateValidated = dob.length === 10;
 
-	function next1() {
+	function next2() {
 		step = 2;
 	}
 

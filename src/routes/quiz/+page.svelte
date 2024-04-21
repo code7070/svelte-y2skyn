@@ -25,9 +25,7 @@
 		<Header />
 	{/if}
 	{#if view === 'quiz'}
-		<div in:scale>
-			<QuizSteps />
-		</div>
+		<QuizSteps />
 	{/if}
 </div>
 
