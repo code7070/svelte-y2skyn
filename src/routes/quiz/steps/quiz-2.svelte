@@ -7,8 +7,9 @@
 
 	$: dateValidated = dob.length === 10;
 
-	function next2() {
-		step = 2;
+	function next2(e?: any) {
+		if (e) e.preventDefault();
+		step = 3;
 	}
 
 	function prev2() {
@@ -16,12 +17,14 @@
 	}
 </script>
 
-<QuizWrapper
-	title="Tentang Diri"
-	titleState="Pertanyaan 2/5"
-	question="Kapan Tanggal Lahirmu"
-	next={dateValidated ? next2 : false}
-	prev={prev2}
->
-	<InputBoxQuiz bind:value={dob} placeholder="DD/MM/YYY" />
-</QuizWrapper>
+<form on:submit={dateValidated ? next2 : false}>
+	<QuizWrapper
+		title="Tentang Diri"
+		titleState="Pertanyaan 2/5"
+		question="Kapan Tanggal Lahirmu?"
+		prev={prev2}
+		next={dateValidated ? next2 : false}
+	>
+		<InputBoxQuiz bind:value={dob} placeholder="DD/MM/YYY" />
+	</QuizWrapper>
+</form>
