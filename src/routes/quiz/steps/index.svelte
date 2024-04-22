@@ -8,6 +8,7 @@
 	import Quiz_6 from './quiz-6.svelte';
 	import Quiz_7 from './quiz-7.svelte';
 	import Quiz_8 from './quiz-8.svelte';
+	import StepRing from '$lib/components/quiz/step-ring.svelte';
 
 	let step = 1;
 
@@ -22,43 +23,12 @@
 		sleepHour: ''
 	};
 
-	// interface OptionItem {
-	// 	value: string;
-	// 	child: any;
-	// }
-	// interface QuizItem {
-	// 	title: string;
-	// 	titleState: string;
-	// 	questionSize?: 'mini' | 'default';
-	// 	question: string;
-	// 	quest: 'input' | 'option';
-	// 	inputBind?: any;
-	// 	inputPlaceholder?: string;
-	// 	options?: Array<OptionItem>;
-	// }
-
-	// const quizs: Array<QuizItem> = [
-	// 	{
-	// 		title: 'Tentang Diri',
-	// 		titleState: 'Pertanyaan 1/5',
-	// 		questionSize: 'mini',
-	// 		question: 'Halo! Kami Y2SKYN, Kalau Kamu?',
-	// 		quest: 'input',
-	// 		inputBind: form.name,
-	// 		inputPlaceholder: 'Nama'
-	// 	},
-	// 	{
-	// 		title: 'Tentang Diri',
-	// 		titleState: 'Pertanyaan 2/5',
-	// 		question: 'Kapan Tanggal Lahirmu?',
-	// 		quest: 'input',
-	// 		inputBind: form.dob,
-	// 		inputPlaceholder: 'DD/MM/YYYY'
-	// 	}
-	// ];
+	let quizLength = Object.keys(form).length;
 </script>
 
-<div in:fade={{ delay: 150 }}>
+<StepRing bind:length={quizLength} bind:step />
+
+<div in:fade={{ delay: 150 }} style="position: relative;">
 	{#if step === 1}
 		<div in:fade={{ delay: 250 }} out:fade={{ duration: 150 }}>
 			<Quiz_1 bind:name={form.name} bind:step />
