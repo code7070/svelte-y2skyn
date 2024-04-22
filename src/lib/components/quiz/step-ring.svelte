@@ -48,6 +48,7 @@
 		flex-direction: column;
 		font-size: 20px;
 		gap: 20px;
+		line-height: 130%;
 	}
 
 	@media (min-width: 720px) {
