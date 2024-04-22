@@ -3,6 +3,8 @@
 	export let length: number;
 
 	const arrs = Array.from(Array(length).keys());
+
+	$: console.log({ step });
 </script>
 
 <div class="step-ring" aria-details={`${step}`}>
@@ -14,20 +16,59 @@
 </div>
 <div>{step}</div>
 
+<div class="wording" aria-details={`${step}`}>
+	<div>
+		Sedikit lagi, kita sudah<br />
+		hampir aja kerja bareng.<br />
+		Hope i can do for the<br />great <span class="natuno">natuno</span>.
+	</div>
+	<div>Hope u like this as a proof<br />Tipis-tipis la hehe ;)</div>
+</div>
+
 <style>
+	:root {
+		--width: 90%;
+		--posY: -200%;
+	}
+
+	.natuno {
+		background-color: #ff642b;
+		color: #fff;
+		padding: 1px;
+	}
+
+	.wording {
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		width: 80%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		font-size: 20px;
+		gap: 20px;
+	}
+
+	@media (min-width: 720px) {
+		.wording {
+			font-size: 40px;
+			gap: 40px;
+		}
+	}
+
 	@keyframes downing {
 		from {
-			width: 90%;
+			width: var(--width);
 			transform: translate(-50%, -122.5%);
 		}
 		to {
-			width: 90%;
+			width: var(--width);
 			transform: translate(-50%, -50%);
 		}
 	}
 
 	.step-ring {
-		--posY: -200%;
 		position: fixed;
 		left: 50%;
 		top: 50%;
@@ -38,6 +79,24 @@
 		transform: translate(-50%, var(--posY));
 		transition: 0.25s ease-in;
 		/* animation: downing 1s linear 1 forwards; */
+	}
+
+	.step-ring[aria-details='9'] {
+		animation: downing 1s linear 1 forwards;
+	}
+
+	@media (min-width: 768px) {
+		.step-ring {
+			--posY: -135%;
+			--width: 65%;
+		}
+	}
+
+	@media (min-width: 920px) {
+		.step-ring {
+			--posY: -122.5%;
+			--width: 45%;
+		}
 	}
 
 	.step-ring[aria-details='1'] {
