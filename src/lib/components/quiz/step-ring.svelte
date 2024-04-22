@@ -42,13 +42,24 @@
 		left: 50%;
 		top: 50%;
 		width: 80%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%) scale(0.5);
 		text-align: center;
 		display: flex;
 		flex-direction: column;
 		font-size: 20px;
 		gap: 20px;
 		line-height: 130%;
+
+		opacity: 0;
+		pointer-events: none;
+
+		transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		transition-delay: 1s;
+	}
+
+	.wording[aria-details='9'] {
+		opacity: 100%;
+		transform: translate(-50%, -50%) scale(1);
 	}
 
 	@media (min-width: 720px) {
@@ -129,7 +140,7 @@
 	}
 
 	.step-ring[aria-details='8'] {
-		transform: translate(-50%, -122.5%) rotate(calc(7 * 45deg));
+		transform: translate(-50%, var(--posY)) rotate(calc(7 * 45deg));
 	}
 
 	.inner {
