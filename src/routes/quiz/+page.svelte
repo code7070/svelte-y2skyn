@@ -2,25 +2,24 @@
 	import Logo from './logo.svelte';
 	import Header from '$lib/components/header/quiz/index.svelte';
 	import QuizSteps from './steps/index.svelte';
-	import { scale } from 'svelte/transition';
-	import { onDestroy, onMount } from 'svelte';
+	// import { scale } from 'svelte/transition';
+	// import { onDestroy, onMount } from 'svelte';
 
 	let view = 'logo';
 	let timer: number | undefined;
 
-	onMount(() => {
+	let loaded = false;
+
+	if (loaded) {
 		timer = setTimeout(() => {
 			view = 'quiz';
+			clearTimeout(timer);
 		}, 2000);
-	});
-
-	onDestroy(() => {
-		clearTimeout(timer);
-	});
+	}
 </script>
 
 <div class="wrapper">
-	<Logo view={`${view}`} />
+	<Logo view={`${view}`} bind:loaded />
 	{#if view === 'quiz'}
 		<Header />
 	{/if}

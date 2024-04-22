@@ -2,14 +2,36 @@
 	import { scale } from 'svelte/transition';
 	import logo from '$lib/assets/logo-white.svg';
 	import { quintOut } from 'svelte/easing';
-	let title = 'Y2SKYN Logo';
 
 	export let view: string = '';
+	export let loaded: boolean = false;
+
+	let title = 'Y2SKYN Logo';
+
+	const createLoadObserver = (handler: any) => {
+		let waiting = 0;
+
+		const onload = (el: any) => {
+			waiting++;
+			el.addEventListener('load', () => {
+				waiting--;
+				if (waiting === 0) {
+					handler();
+				}
+			});
+		};
+
+		return onload;
+	};
+
+	const onload = createLoadObserver(() => {
+		loaded = true;
+	});
 </script>
 
 {#if view === 'logo'}
 	<div class="logo">
-		<img alt={title} src={logo} {title} transition:scale={{ easing: quintOut }} />
+		<img alt={title} src={logo} {title} use:onload transition:scale={{ easing: quintOut }} />
 	</div>
 {/if}
 
