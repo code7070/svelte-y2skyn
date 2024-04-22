@@ -20,7 +20,7 @@
 	<div>
 		Sedikit lagi, kita sudah<br />
 		hampir aja kerja bareng.<br />
-		Hope i can do for the<br />great <span class="natuno">natuno</span>.
+		Hope i work for the<br />great <span class="natuno">natuno</span>.
 	</div>
 	<div>Hope u like this as a proof<br />Tipis-tipis la hehe ;)</div>
 </div>
