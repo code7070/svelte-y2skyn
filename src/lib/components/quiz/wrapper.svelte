@@ -16,9 +16,9 @@
 	<div class="content">
 		<div class="head">
 			<div class="title">
-				<span>{title}</span>
-				<span>.</span>
-				<span>{titleState}</span>
+				<div>{title}</div>
+				<div class="round" />
+				<div>{titleState}</div>
 			</div>
 			{#if question}
 				<div class={`question ${questionSize}`}>{question}</div>
@@ -67,6 +67,17 @@
 		font-size: 16px;
 		font-weight: 400;
 		color: rgba(255, 255, 255, 0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+	}
+
+	.title .round {
+		width: 5px;
+		height: 5px;
+		background-color: #fff;
+		border-radius: 999px;
 	}
 
 	.question {
