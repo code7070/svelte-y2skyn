@@ -17,7 +17,7 @@
 	}
 </script>
 
-<form on:submit={dateValidated ? next2 : false}>
+<form on:submit={dateValidated ? next2 : undefined}>
 	<QuizWrapper
 		title="Tentang Diri"
 		titleState="Pertanyaan 2/5"

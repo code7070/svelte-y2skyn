@@ -5,6 +5,9 @@
 	import Quiz_3 from './quiz-3.svelte';
 	import Quiz_4 from './quiz-4.svelte';
 	import Quiz_5 from './quiz-5.svelte';
+	import Quiz_6 from './quiz-6.svelte';
+	import Quiz_7 from './quiz-7.svelte';
+	import Quiz_8 from './quiz-8.svelte';
 
 	let step = 1;
 
@@ -13,7 +16,10 @@
 		dob: '',
 		zodiac: '',
 		destiny: '',
-		crystal: ''
+		crystal: '',
+		personType: '',
+		isTravelling: '',
+		sleepHour: ''
 	};
 
 	// interface OptionItem {
@@ -72,6 +78,18 @@
 	{:else if step === 5}
 		<div in:fade={{ delay: 250 }} out:fade={{ duration: 150 }}>
 			<Quiz_5 bind:crystal={form.crystal} bind:step />
+		</div>
+	{:else if step === 6}
+		<div>
+			<Quiz_6 bind:personType={form.personType} bind:step />
+		</div>
+	{:else if step === 7}
+		<div>
+			<Quiz_7 bind:isTravelling={form.personType} bind:step />
+		</div>
+	{:else if step === 8}
+		<div>
+			<Quiz_8 bind:sleepHour={form.sleepHour} bind:step />
 		</div>
 	{/if}
 </div>

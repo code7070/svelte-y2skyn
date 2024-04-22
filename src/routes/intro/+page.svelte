@@ -34,8 +34,6 @@
 	onDestroy(() => {
 		clearInterval(cint);
 	});
-
-	$: console.log({ view });
 </script>
 
 <main aria-details={`${index}`}>
